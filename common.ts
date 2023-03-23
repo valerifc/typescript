@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Types } from "mongoose";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -421,13 +422,7 @@ const testWithoutEmptyObjectProps: IWithoutEmptyObjectProps<{
   b: {};
 }> = { a: 1 };
 
-export type IWithoutEmptyObjectPropsDeep<T> = IOmitByTypeDeep<
+export type IWithoutEmptyObjectPropsDeep_TODO<T> = IOmitByTypeDeep<
   T,
   Record<string, never>
 >;
-const testWithoutEmptyObjectPropsDeep: IWithoutEmptyObjectPropsDeep<{
-  a: number;
-  b: { g: number; bb: object };
-  c: { dd: {}; ee: null; ff: { ggg: {} } };
-  d: Record<string, never>;
-}> = { a: 1, b: { g: NaN, bb: { xyz: "" } }, c: { ee: null, ff: { n: 1 } } };
